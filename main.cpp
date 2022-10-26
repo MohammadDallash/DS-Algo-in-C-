@@ -29,8 +29,8 @@ void quick_sort(vector<int> &v, int start, int end)
     while (p2>p1)
     {
         if (v[p1] <= v[pivet])p1++;
-        if (v[p2] > v[pivet])p2++;
-        if (v[p1] > v[pivet] && v[p2] <= v[pivet]) swap(v[p1++],v[p2--]);
+        else if (v[p2] > v[pivet])p2--;
+        else if (v[p1] > v[pivet] && v[p2] <= v[pivet]) swap(v[p1++],v[p2--]);
     }
     if (v[p1]>v[pivet] && p1<pivet) swap(v[p1],v[pivet]);
     else p1++;
